@@ -198,7 +198,7 @@ body {
   opacity: 0;
   filter: hue-rotate(275deg);
   color: #000;
-  margin-left: auto;
+  margin-left: auto
   margin-right: auto;
   font-size: 25px;
   line-height: 1;
@@ -1027,7 +1027,6 @@ dropdwon.section {
 
 .dropdown-link {
   z-index: 30;
-  min-height: 100vh;
   text-align: center;
   -webkit-text-stroke-color: #0f0f0f;
   flex-direction: column;
@@ -1035,7 +1034,7 @@ dropdwon.section {
   align-items: center;
   padding-left: 25px;
   padding-right: 25px;
-  font-size: 13px;
+  font-size: 16px;
   transition: all .2s;
   display: flex;
   position: relative;
@@ -1043,7 +1042,7 @@ dropdwon.section {
 
 .dropdown-link:hover {
   box-shadow: none;
-  color: #7839f3;
+  color: #474747;
   transform: none;
 }
 
@@ -1428,7 +1427,78 @@ dropdwon.section {
   display: none;
 }
 
-.jobudetotohlevtypize {
+
+/* Apply styles to the entire form container */
+.formhere {
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 30%;
+}
+
+/* Style the form elements */
+.formhere form {
+  margin-top: 45%;
+  align-content: center;
+  padding: 20px;
+  border-radius: 35px;
+}
+
+/* Style labels */
+.formhere label {
+  color: #696868;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flexbox;
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size:  15px;
+}
+.formhere .forminputframe {
+  padding: 100px;
+  color: #515252;
+}
+.formhere textarea {
+  color: #00ffbf  ;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #666666;
+  border-radius: 4px;
+}
+.formhere input[type="file"] {
+  width: 100%;
+  padding: 10px;  
+}
+
+/* Style the submit button */
+.formhere .submit-button {
+  width: auto;
+  background-color: #262626;
+  color: rgb(199, 199, 199);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+} 
+
+.formhere .submit-button:hover {
+  background-color: rgb(96, 96, 96);
+}
+
+.upload-button {
+  width: 98% ;
+  padding: 5px 5px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4a4a4a;
+  color: rgb(157, 92, 92);
+  .jobudetotohlevtypize {
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
   z-index: 4444;
   max-width: 444px;
   text-align: center;
@@ -1439,7 +1509,7 @@ dropdwon.section {
   padding-right: 33px;
   display: flex;
   position: relative;
-  top: 30%;
+  top: 20%;
   bottom: 170px;
   right: 0%;
 }
@@ -1650,14 +1720,14 @@ dropdwon.section {
 
 .button-2.cc-gradient-pulm-copy.radius {
   width: 98%;
-  max-height: 99px;
+  max-height: 30px;
   color: #000;
   text-align: center;
   background-color: rgba(0, 0, 0, 0);
   background-image: none;
   background-repeat: repeat;
   background-size: auto;
-  border: 1px solid #0fb;
+  border: 1px solid rgb(22, 0, 0);
   border-radius: 24.4px;
   flex-direction: row;
   justify-content: center;
@@ -1686,6 +1756,7 @@ dropdwon.section {
 }
 
 .uploadedfilename {
+  margin-bottom: 3%;
   opacity: 1;
   color: #535353;
   text-align: center;
@@ -2217,13 +2288,9 @@ dropdwon.section {
   .icon-square {
     width: 66px;
     height: 66px;
-  }
-
-  .forminputframe {
-    max-height: 55.5px;
-    min-height: 55.5px;
-    border-radius: 12.2px;
-  }
+    
+ 
+  
 
   .popup-container {
     width: auto;

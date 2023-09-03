@@ -318,7 +318,7 @@ button,
   background-color: #ffdede;
 }
 label {
-  display: block;
+  display: contents;
   margin-bottom: 5px;
   font-weight: bold;
 }
