@@ -1,0 +1,35 @@
+import os
+import zipfile
+from django.shortcuts import render
+from django.http import HttpResponse
+from .forms import SongUploadForm
+from spleeter.separator import Separator
+def separate_instruments(request):
+    if request.method == 'POST':
+        form = SongUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            song = form.save()
+            output_folder = os.path.join('media', 'output')
+            os.makedirs(output_folder, exist_ok=True)
+            # Process the song using Spleeter here
+            # Replace this with actual Spleeter codex   
+            # Run Spleeter command to separate instruments
+            print("Entering the spleeetr")
+            separator = Separator('spleeter:5stems')
+            #os.system(f"spleeter separate -i {song.audio_file.path} -p spleeter:2stems -o {output_folder}")
+            separator.separate_to_file(song.audio_file.path, output_folder)
+            print("Exiting ... ")   
+            # Create a zip file containing the separated instrument tracks
+            zip_file_path = os.path.join("media", "output", f"{song.title}_separated.zip")
+            with zipfile.ZipFile(zip_file_path, 'w') as zipf:
+                for root, _, files in os.walk(output_folder):
+                    for file in files:
+                        zipf.write(os.path.join(root, file), file)
+            
+            response = HttpResponse(open(zip_file_path, 'rb').read())
+            response['Content-Type'] = 'application/zip'
+            response['Content-Disposition'] = f'attachment; filename="{song.title}_separated.zip"'
+            return response
+    else:
+        form = SongUploadForm()
+    return render(request, 'upload.html', {'form': form})
