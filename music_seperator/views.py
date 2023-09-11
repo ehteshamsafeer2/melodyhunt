@@ -3,12 +3,12 @@ import zipfile
 from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import SongUploadForm
-from spleeter.separator import Separator
+#from spleeter.separator import Separator
 
 from django.http import HttpResponse
 from django.shortcuts import render
-import librosa
-import librosa.display
+#import librosa
+#import librosa.display
 from pydub import AudioSegment
 
 def separate_instruments(request):
@@ -23,9 +23,9 @@ def separate_instruments(request):
             os.makedirs(output_folder, exist_ok=True)
 
             # Process the song using Spleeter
-            separator = Separator('spleeter:4stems')
-            separator.separate_to_file(song.audio_file.path, output_folder)
-            print(output_folder)
+     #       separator = Separator('spleeter:4stems')
+     #       separator.separate_to_file(song.audio_file.path, output_folder)
+  #          print(output_folder)
 
             file_list = os.listdir(output_folder)
             print(file_list )
